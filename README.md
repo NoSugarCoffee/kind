@@ -6,7 +6,7 @@ Use prebuilt images from Dockerhub: https://hub.docker.com/r/nosugarcoffee/kind/
 
 Run:
 
-`docker run -it --privileged -p 8443:8443 -p 10080:10080 nosugarcoffee/kind:latest-v1.24.0`
+`docker run -it --privileged -p 8443:8443 -p 10080:10080 nosugarcoffee/kind:latest-v1.23.10`
 
 Or more likely run CI in, [see examples](https://github.com/bsycorp/kind#can-i-use-it-on-my-cloud-cicd-provider)
 
