@@ -1,14 +1,12 @@
 `kind`, like `docker:dind` but aims to make a full Kubernetes cluster available to test against in your CI pipeline. It is fast to startup and totally ephemeral, so you get a clean start for each CI run.
 
-[![Build Status](https://travis-ci.org/bsycorp/kind.svg?branch=master)](https://travis-ci.org/bsycorp/kind)
-
 ## Quickstart
 
-Use prebuilt images from Dockerhub: https://hub.docker.com/r/bsycorp/kind/
+Use prebuilt images from Dockerhub: https://hub.docker.com/r/nosugarcoffee/kind/
 
 Run:
 
-`docker run -it --privileged -p 8443:8443 -p 10080:10080 bsycorp/kind:latest-1.12`
+`docker run -it --privileged -p 8443:8443 -p 10080:10080 nosugarcoffee/kind:latest-v1.24.0`
 
 Or more likely run CI in, [see examples](https://github.com/bsycorp/kind#can-i-use-it-on-my-cloud-cicd-provider)
 
