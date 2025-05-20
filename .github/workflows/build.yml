@@ -47,7 +47,7 @@ jobs:
       - name: Build Kind Image
         run: |
           chmod +x ./build.sh
-          ./build.sh nosugarcoffee/kind:latest-${{ matrix.kubernetes_version }} nosugarcoffee/kind:${{ matrix.kubernetes_version }}
+          ./build.sh liangliangdai/kind:latest-${{ matrix.kubernetes_version }} liangliangdai/kind:${{ matrix.kubernetes_version }}
         env:
           KUBERNETES_VERSION: ${{ matrix.kubernetes_version }}
           MINIKUBE_VERSION: ${{ matrix.minikube_version }}
@@ -57,4 +57,4 @@ jobs:
         # Only push when on main/master branch, not on pull requests
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         run: |
-          docker push nosugarcoffee/kind:latest-${{ matrix.kubernetes_version }}
+          docker push liangliangdai/kind:latest-${{ matrix.kubernetes_version }}
