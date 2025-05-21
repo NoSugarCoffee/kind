@@ -17,7 +17,7 @@ rm -rf /var/run/docker*
 rm -rf /var/lib/kubelet
 
 echo "Setting up networking.." # use hard-coded IP to make kube happy (all the things are configured against it, otherwise we need to bootstrap kube everytime)
-if (ip addr list | grep -v $STATIC_IP); then
+if ! ip addr list | grep -q "$STATIC_IP"; then
     ip addr add $STATIC_IP/32 dev eth0
 fi
 
