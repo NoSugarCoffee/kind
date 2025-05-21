@@ -47,13 +47,13 @@ jobs:
         run: |
           # For main/master branch pushes or manual workflow runs
           if [[ "${{ github.event_name }}" == "push" || "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            echo "BUILD_TAG=nosugarcoffee/kind:latest-${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
-            echo "VERSION_TAG=nosugarcoffee/kind:${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
+            echo "BUILD_TAG=liangliangdai/kind:latest-${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
+            echo "VERSION_TAG=liangliangdai/kind:${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
           # For pull requests
           elif [[ "${{ github.event_name }}" == "pull_request" ]]; then
             SHORT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
-            echo "BUILD_TAG=nosugarcoffee/kind:${SHORT_SHA}-${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
-            echo "VERSION_TAG=nosugarcoffee/kind:${SHORT_SHA}-${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
+            echo "BUILD_TAG=liangliangdai/kind:${SHORT_SHA}-${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
+            echo "VERSION_TAG=liangliangdai/kind:${SHORT_SHA}-${{ matrix.kubernetes_version }}" >> $GITHUB_OUTPUT
           fi
 
       - name: Build Kind Image
